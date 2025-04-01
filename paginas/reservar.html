@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar-San Remo World Hotel </title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+
+</head>
+
+<body>
+    <header>
+
+        <!--MENÚ DE NAVEGACIÓN-->
+        <nav>
+            <!--LOGO-->
+            <img src="/imagenes/logo.png" alt="San Remo World Hotel Logo" class="logo">
+            <ul>
+                <li><a href="index.html#elhotel">El Hotel</a></li>
+                <li><a href="/paginas/habitaciones.html">Habitaciones</a></li>
+                <li><a href="/paginas/promociones.html"> Promociones</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="/paginas/ubicacion.html">Ubicación</a></li>
+                <li><a href="/paginas/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+
+
+        <main>
+
+            <!--FORMULARIO DE RESERVA-->
+
+            <h1>Reserva de Habitación</h1>
+            <form action="" method="get">
+
+                <label for="nombre">Nombre Completo </label>
+                <input id="nombre" name="nombre " type="text" placeholder="Ingrese su nombre completo"
+                    title="Nombre Completo" required>
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="Ingrese su email" title="Correo electronico"
+                    required>
+
+                <label for="telefono">Telefono</label>
+                <input id="telefono" name="telefono" type="tel" placeholder="Ingrese su telefono"
+                    title="Telefono de contacto" required>
+
+                <label for="fechaEntrada">Fecha de Entrada</label>
+                <input id="fechaEntrada" name="fechaEntrada" type="date" placeholder="Ingrese la fecha de entrada"
+                    title="Fecha de entrada" required>
+
+                <label for="fechaSalida">Fecha de salida</label>
+                <input id="fechaSalida" name="fechaSalida" type="date" placeholder="Ingresa la fecha de salida"
+                    title="Fecha de salida" required>
+
+
+                <label for="habitacion">Tipo de Habitación</label>
+                <select name="habitacion" id="habitacion" title="Seleccione el tipo de habitacion" required>
+                    <option value="">Selecciona el tipo de habitación</option>
+                    <option value="Doble Standard">Doble Standard</option>
+                    <option value="Doble Standard Twin">Doble Standard Twin</option>
+                    <option value="Doble Superior Twin">Doble Superior Twin</option>
+                    <option value="Triple Standard">Triple Standard</option>
+                    <option value="Triple Superior">Triple Superior</option>
+                    <option value="Cuadruple Standard">Cuadruple Standard</option>
+                    <option value="Cuadruple Superior">Cuadruple Superior</option>
+                    <option value="Quintuple Standard">Quintuple Standard</option>
+                    <option value="Doble Apart">Doble Apart</option>
+                    <option value="Triple Apart">Triple Apart</option>
+                    <option value="Cuadruple Apart">Cuadruple Apart</option>
+                    <option value="Quintuple Apart">Quintuple Apart</option>
+                    <option value="Sextuple Apart">Sextuple Apart</option>
+                </select>
+
+                <label for="comentarios">Comentarios Adicionales</label>
+                <textarea id="comentarios" placeholder="Ingresa el comentario" title="Escribe tu comentario aquí"
+                    rows="20"></textarea>
+
+                <button type="submit" value="reservar " title="Reservar habitacion">Reservar</button>
+            </form>
+
+
+        </main>
+
+       <!--PIE DE PÁGINA-->
+    <footer>
+        <!--REDES SOCIALES-->
+        <section>
+            <h3>Seguinos en nuestras redes sociales</h3>
+            <i class='bx bxl-instagram'></i>
+            <a href="https://www.instagram.com/hotelessanremo?igsh=MTFsMDdobXprNWV1dA==" target="_blank"title="Ir a Instagram">hotelessanremo </a>
+            <i class='bx bxl-facebook-circle'></i>
+            <a href="https://www.facebook.com/share/15zixzJRWT/" target="_blank" title="Ir a Facebook">San RemoHoteles</a>
+        </section>
+
+        <!--CONTACTO-->
+        <section>
+            <h3>Contacto</h3>
+            <i class='bx bxs-phone'></i>
+            <a href="tel:+5492257585109" title="Llamar">2257585109</a>
+            <i class='bx bxl-whatsapp'></i>
+            <a href="https://wa.me/5492234425306" target="_blank" title="Ir a WhatsApp">2234425306</a>
+            <i class='bx bx-envelope'></i>
+            <a href="mailto:revervas@sanremohotel.com" target="_blank" title="Enviar correo">revervas@sanremohotel.com</a>
+            <i class='bx bx-location-plus'></i>
+            <a href="https://maps.app.goo.gl/YYvqaTjuzkm96Fs86" target="_blank" title="Ver Ubicación">C.16 San Clemente del Tuyú,BsAs,Argentina</a>
+
+        </section>
+        <p>© 2025 Hotel San Remo - Todos los derechos reservados</p>
+    </footer>
+
+</body>
+
+</html>

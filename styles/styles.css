@@ -1,0 +1,56 @@
+/*Elimina los margenes y paddings que agrega el navegador por defecto*/
+* {
+    padding: 0;
+    margin: 0;
+
+    
+}
+
+/* Estilo general para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.logo{
+    width: 110px ;
+    height: 130px;
+}
+nav{
+    background-color: #FCF8EF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+nav li {
+    display: inline;/*items del menu en una línea horizontal*/
+    margin-right: 20px;
+    background-color: #EBC56A;
+    font-weight: 700; /*para poner en negrita la letra*/
+    margin-right: 20px;
+}
+   
+nav a {
+     text-decoration: none;/*elimina el subrayado*/
+     color:#3f2c0e;
+     font-size: 40px;
+    }
+
+ul li a{
+   
+    font-family: "Winky Sans", sans-serif;
+    padding: 10px;
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+    font-size: 20px;
+}
+.frente-hotel {
+    width: 100%;
+    height: 750px;
+    opacity: 0.7;
+  
+}
+.frente-hotel::before{
+    background-color: rgba(0,0,0,0.5);
+}
