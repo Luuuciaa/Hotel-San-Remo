@@ -1,0 +1,775 @@
+/*Elimina los margenes y paddings que agrega el navegador por defecto*/
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilo general para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 70px;
+
+}
+
+
+main {
+    padding-top: 80px;
+}
+
+#logo {
+    width: 110px;
+    height: 106px;
+
+}
+
+/*MENU DE NAVEGACIÓN*/
+/* Estilo de la navegación */
+nav {
+    display: flex;
+    background-color: #fcf8ef;
+    align-items: center;/* Centra verticalmente los enlaces */
+    box-sizing: border-box;/* Asegura que el padding no afecte el tamaño total */
+    justify-content: space-between;
+    padding: 20px; /*Agrega un poco de espacio alrededor del contenido*/
+    position: fixed;/*deja el menu fijo*/
+    top: 0;
+    width: 100%;
+    z-index: 1000;/* para que quede encima del contenido */
+
+}
+
+/* Estilo de los elementos de la lista de navegación */
+nav li {
+    margin: 10px; /*Espacio entre los elementos*/
+
+}
+
+/* Estilo de los enlaces de navegación */
+nav a {
+    text-decoration: none;
+    color: #3f2c0e;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    padding: 6px 16px;/* Reduce el tamaño del fondo */
+    border-radius: 20px;/* Hace que el fondo sea redondo */
+    background-color: #d8b25e;
+    transition: background-color 0.3s ease; /* Transición suave para el hover */
+    cursor: pointer;/*mouse*/
+
+}
+
+
+/* Estilo de la lista de navegación */
+nav ul {
+    display: flex;/*Hace que los elementos estén en línea*/
+    list-style: none;
+    text-align: left;/* Asegura que los enlaces se alineen a la izquierda */
+
+}
+
+nav a:hover {
+    background-color: #3f2c0e;
+    color: #fcf8ef; /* Cambia el color del texto en el hover */
+
+}
+
+/*SECCIÓN DE PRESENTACIÓN*/
+#hotel {
+    width: 100%;
+    filter: brightness(50%);
+    /*Oscurece la imagen*/
+    height: 700px;
+
+}
+
+.presentacion {
+    position: relative;
+    font-family: "Glory", sans-serif;
+}
+
+.presentacion h1 {
+    position: absolute;
+    top: 30%;/* Centra el texto en vertical en la parte superior */
+    left: 40%; /* Centra el texto en horizontal */
+    text-align: center;
+    font-size: 70px;
+    color: white;
+    font-weight: 800;
+    font-style: normal;
+
+}
+
+.presentacion p {
+    position: absolute;
+    top: 85%;
+    text-align: center;
+    color: white;
+    font-weight: 200;
+    font-size: 25px;
+    right: 30%;
+    left: 30%; /* Centra el párrafo horizontalmente */
+   
+
+}
+
+/*SECCIÓN INFORMACIÓN DEL HOTEL*/
+.elhotel {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 30px;
+    flex-wrap: wrap;
+    font-family: "Glory", sans-serif;
+    gap: 80px;/* Espacio entre el texto y la imagen */
+}
+
+.contenido-texto {
+    max-width: 600px;
+}
+
+.elhotel h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.elhotel h3 {
+    font-style: italic;
+    margin-bottom: 40px;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+.elhotel p {
+    line-height: 25px;
+    font-family: "League Spartan", sans-serif;
+    font-size: 20px;
+    margin-bottom: 30px;
+
+}
+
+#vermas {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.elhotel a {
+    text-decoration: none;
+    color: #3f2c0e;
+    font-family: "Montserrat", sans-serif;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #d8b25e;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+
+.elhotel a:hover {
+    background-color: #3f2c0e;
+    color: #fcf8ef;
+}
+
+.contenido-imagen img {
+    width: 500px;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+
+/*SERVICIOS*/
+.servicios {
+    background-color: #fcf8ef; /* Fondo suave para la sección */
+    font-family: "Montserrat", sans-serif;
+    padding: 40px;
+    margin-bottom: 800px;
+    margin-top: 70px;
+    max-width: 1200px;/* Limitar el ancho máximo */
+    margin: 0 auto;/* Centrar la sección */
+
+
+}
+
+.servicios-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+
+
+}
+
+.servicios h3 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 750;
+}
+
+.servicios h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+
+}
+
+.columna1,
+.columna2,
+.columna3 {
+    margin-right: 50px;
+}
+
+.servicios .bx {
+    margin-right: 15px;
+    color: #3f2c0e;
+}
+
+/* Estilo para cada artículo dentro de la sección */
+.servicios article i {
+    font-size: 40px;
+    transition: transform 0.3s ease;
+}
+
+.servicios article i:hover {
+    transform: scale(1.2) rotate(5deg); /*movimiento en los íconos*/
+}
+
+.servicios p {
+    font-size: 20px;
+    font-family: "League Spartan", sans-serif;
+    margin: 20px;
+    line-height: 1.2;
+
+}
+
+#texto-coche {
+    max-width: 250px;
+}
+
+#texto-desayuno {
+    max-width: 200px;
+}
+
+#texto-wifi {
+    max-width: 276px;
+
+}
+
+#texto-comida {
+    max-width: 250px;
+}
+
+/*HABITACIONES*/
+#titulohabitaciones {
+    font-family: "Glory", sans-serif;
+    text-align: center;
+    margin-top: 80px;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.habitaciones-container {
+    display: flex;
+    flex-wrap: wrap;/*Permite que los elementos (las imágenes) bajen a la siguiente fila si no entran en una sola*/
+    justify-content: center;/*Centra horizontalmente las cards dentro del contenedor.*/
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.habitaciones {
+    border: 2px solid #3f2c0e; /* Borde de 2px de grosor y color negro */
+    padding: 30px; /* Espacio interno dentro del recuadro */
+    margin: 30px;/* Espacio externo alrededor del recuadro */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);/* Sombra */
+    width: 500px;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.habitaciones:hover {
+    box-shadow: 0 8px 16px #3f2c0e;
+
+}
+
+.habitaciones h3 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-family: "Glory", sans-serif;
+}
+
+.habitaciones img {
+    width: 100%;
+    border-radius: 8px;
+
+}
+
+.habitaciones h5 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: "Glory", sans-serif;
+
+
+}
+
+.habitaciones p {
+    font-size: 20px;
+    color: #3f2c0e;
+    font-weight: 800;
+    font-family: "Glory", sans-serif;
+
+}
+
+.habitaciones ul {
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "Glory", sans-serif;
+    font-size: 30px;
+}
+
+.habitaciones ul li {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #555;
+}
+
+.habitaciones h5 {
+    font-size: 20px;
+
+
+}
+
+.habitaciones h4 {
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: 800;
+    font-family: "Glory", sans-serif;
+}
+
+.reservar {
+    text-decoration: none;
+    color: #3f2c0e;
+    font-family: "Montserrat", sans-serif;
+    padding: 10px 10px;/* Reduce el tamaño del fondo */
+    border-radius: 25px;/* Hace que el fondo sea redondo */
+    background-color: #d8b25e;
+    transition: background-color 0.3s ease;/* Transición suave para el hover */
+    font-weight: 700;
+    width: 70px;
+    display: flex;
+    justify-content: flex-end;/*lo alinea a la izquierda*/
+    text-align: center;
+    justify-content: center;
+    font-size: 15px;
+    cursor: pointer;/*mouse*/
+
+}
+
+.reservar:hover {
+    background-color: #3f2c0e;
+    color: #fcf8ef;/* Cambia el color del texto en el hover */
+}
+
+/*iconos*/
+.bx-check {
+    color: #3f2c0e;
+
+}
+
+.bx-user {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+/*SECCION UBICACIÓN*/
+.ubicacion {
+    font-family: "Glory", sans-serif;
+}
+
+.ubicacion h1 {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    font-size: 40px;
+
+}
+
+.ubicacion h3 {
+    text-align: center;
+    margin-top: 40px;
+    font-style: italic;
+    margin-bottom: 40px;
+    font-size: 20px;
+
+}
+
+.ubicacion p {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+
+.ubicacion iframe {
+    width: 90%;
+    display: block;
+    margin: 0 auto 80px;/*margen superior , izquierdo y derecho y inferior*/
+}
+
+/*FORMULARIO DE CONTACTO*/
+#titulocontacto {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 35px;
+    font-family: "Glory", sans-serif;
+}
+
+#duda {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    font-weight: 500;
+    font-family: "League Spartan", sans-serif;
+    font-size: 20px;
+
+}
+
+.formulario-contacto,
+.formulario-reservar {
+    background-color: #fcf8ef;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;/* centrado horizontal y espacio arriba/abajo */
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.formulario-contacto label {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 17px;
+
+}
+
+
+.formulario-contacto textarea {
+    max-width: 100%;
+    max-height: 200px;
+    margin-bottom: 15px;
+    font-family: "Montserrat", sans-serif;
+    padding: 12px;  /* Agrega espacio interno general */
+    padding-top: 20px; /* Más espacio arriba específicamente */
+}
+
+textarea::placeholder {
+    font-size: 17px;
+
+}
+
+.formulario-contacto input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px;/* Bordes redondeados */
+    font-family: inherit;
+    font-size: 17px;
+    box-sizing: border-box;/* Incluye padding y borde en el ancho total */
+    margin-bottom: 15px;
+
+}
+
+.formulario-contacto select option {
+    font-size: 15px;
+}
+
+.formulario-contacto button {
+    margin: 30px auto; /* Centrado y con más espacio arriba */
+    text-decoration: none;
+    color: #3f2c0e;
+    font-family: "Montserrat", sans-serif;
+    padding: 10px 20px;/* alto y ancho */
+    border-radius: 25px;
+    background-color: #d8b25e;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+    font-size: 17px; /* Tamaño de letra más grande */
+    width: auto;/* Se adapta al contenido */
+    text-align: center;
+    border: none;
+    cursor: pointer;/*mouse*/
+
+}
+
+.formulario-contacto button:hover {
+    background-color: #3f2c0e;
+    color: #fcf8ef; /* Cambia el color del texto en el hover */
+}
+
+.checkbok {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checkbok input[type="checkbox"] {
+    margin-right: 10px; /* Agrega espacio entre el checkbox y el texto */
+    width: 15px;
+    height: 20px;
+    accent-color: #d8b25e;
+
+}
+
+/*FORMULARIO DE RESERVA*/
+#tituloreserva {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 35px;
+    font-family: "Glory", sans-serif;
+}
+
+.formulario-reservar label {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+
+.formulario-reservar input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;/*hereda la fuente del padre*/
+    font-size: 17px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.formulario-reservar button {
+    margin: 30px auto; /* Centrado y con más espacio arriba */
+    text-decoration: none;
+    color: #3f2c0e;
+    font-family: "Montserrat", sans-serif;
+    padding: 10px 20px;/* alto y ancho */
+    border-radius: 25px;
+    background-color: #d8b25e;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+    font-size: 17px; /* Tamaño de letra más grande */
+    width: auto; /* Se adapta al contenido */
+    text-align: center;
+    border: none;
+    cursor: pointer;/*mouse*/
+
+}
+
+.formulario-reservar button:hover {
+    background-color: #3f2c0e;
+    color: #fcf8ef;/* Cambia el color del texto en el hover */
+}
+
+.formulario-reservar textarea {
+    max-width: 100%;
+    max-height: 200px;
+    margin-bottom: 15px;
+    font-family: "Montserrat", sans-serif;
+    padding: 12px; /* Agrega espacio interno general */
+    padding-top: 20px; /* Más espacio arriba específicamente */
+
+}
+
+
+/*PROMOCIONES DEL HOTEL*/
+.promos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /*Centra horizontalmente las cards dentro del contenedor.*/
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+}
+
+.promociones h1 {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-family: "Glory", sans-serif;
+}
+
+.promociones p {
+    text-align: center;
+    font-size: 23px;
+    margin-bottom: 90px;
+    font-family: "Glory", sans-serif;
+}
+
+.promociones img {
+    width: 400px;
+    border-radius: 5px;
+
+}
+
+.promociones article {
+    border: 2px solid #3f2c0e;/* Borde de 2px de grosor y color negro */
+    padding: 30px;/* Espacio interno dentro del recuadro */
+    margin: 30px; /* Espacio externo alrededor del recuadro */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2); /* Sombra */
+    width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 15px; /* Espacio entre las cards */
+    max-height: 500px;/* Limita la altura */
+    overflow: hidden;/* Oculta lo que se pasa del tamaño */
+
+}
+
+.promociones article:hover {
+    box-shadow: 0 8px 16px #3f2c0e;
+
+}
+
+.promociones h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: "Glory", sans-serif;
+    font-size: 25px;
+}
+
+
+/*GALERIA DE FOTOS*/
+.imagenes-container {
+    display: grid;
+    grid-template-columns: repeat(2 1fr); /*2 columnas*/
+    grid-template-rows: repeat(3, auto);/*3 filas*/
+    justify-content: center;
+    max-width: 80%;/*Ajusta el ancho del contenedor*/
+    margin: auto;/*Centra las imagenes horizontalmente dentro del contenedor*/
+
+
+}
+
+.galeria h1 {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    font-size: 40px;
+    font-family: "Glory", sans-serif;
+}
+
+.galeria img {
+    margin-left: 30px;
+    margin-bottom: 60px;
+    width: 700px;
+    object-fit: cover;
+    transition: transform 0.3s;/*animacion al pasar el mouse que durara 3s*/
+
+}
+
+.galeria img:hover {
+    transform: scale(1.03);/* agranda un poquito la imagen al pasar el mouse */
+}
+
+.imagenes {
+    margin-bottom: 100px;
+}
+
+
+/*PIE DE PÁGINA*/
+.footer {
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+footer {
+    background-color: #3f2c0e;
+    font-size: 15px;
+    padding: 30px;
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 100px;
+}
+
+.contacto h3 {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 15px;
+
+
+}
+
+.redessociales h3 {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 15px;
+
+}
+
+
+footer a {
+
+    text-decoration: none;
+    color: white;
+
+
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #f8d479;/* un dorado suave que resalta */
+}
+
+footer ul {
+    list-style: none;
+
+}
+
+footer li {
+    margin-bottom: 8px;
+
+}
+
+footer p {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+
+
+}
+
+/*iconos*/
+footer .bx {
+    margin-right: 10px;
+    font-size: 25px;
+    margin-top: 10px;
+    color: #f8d479;
+}

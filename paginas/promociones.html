@@ -5,13 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promociones-San Remo World Hotel </title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="/estilos/estilos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+     <!--TIPOGRÁFIAS DE GOOGLE FONTS-->
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
+
+        <link
+        href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Glory:ital,wght@0,100..800;1,100..800&family=Gruppo&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Spartan:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Glory:ital,wght@0,100..800;1,100..800&family=Gruppo&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Special+Gothic+Condensed+One&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="/imagenes/logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -20,9 +29,9 @@
         <!--MENÚ DE NAVEGACIÓN-->
         <nav>
             <!--LOGO-->
-            <img src="/imagenes/logo.png" alt="San Remo World Hotel Logo" class="logo">
+            <img src="/imagenes/logo.png" alt="San Remo World Hotel Logo" id="logo">
             <ul>
-                <li><a href="index.html#elhotel">El Hotel</a></li>
+                <li><a href="/paginas/index.html">El Hotel</a></li>
                 <li><a href="/paginas/habitaciones.html">Habitaciones</a></li>
                 <li><a href="/paginas/promociones.html"> Promociones</a></li>
                 <li><a href="index.html#servicios">Servicios</a></li>
@@ -30,19 +39,20 @@
                 <li><a href="/paginas/contacto.html">Contacto</a></li>
             </ul>
         </nav>
-
+    </header>
         <main>
             <!--PROMOCIONES DEL HOTEL-->
-            <section>
+            <section class="promociones">
                 <div>
                     <h1>PROMOCIONES</h1>
                     <p>"¡Haz tu escapada perfecta con nuestras promociones exclusivas!"</p>
                 </div>
+                <div class="promos-container" >
                 <article>
                     <img src="/imagenes/verano (1).png" alt="promo de verano">
                     <h3>Promo de verano - 20% de descuento </h3>
                     <p>"¡Disfruta de un verano increíble en nuestro hotel! Reserva ahora y recibe un 20% de descuento en
-                        tu estancia de 3 noches </p>
+                        tu estancia de 3 noches." </p>
                 </article>
 
                 <article>
@@ -64,42 +74,68 @@
                     <img src="/imagenes/cuotas.png" alt="6 cuotas sin interés">
                     <h3>Promoción de Cuotas Sin Interés - Facilita tu Estancia</h3>
                     <p>"Ahora puedes disfrutar de una estancia inolvidable sin preocuparte por el pago. Paga en 6 cuotas
-                        sin interés</p>
+                        sin interés."</p>
                 </article>
+
+                <article>
+                    <img  src="/imagenes/promo.png" alt="Promo 7 noches">
+                    <h3>Promoción 7 noches - 30% de descuento</h3>
+                    <p>"Viví una semana soñada en nuestro hotel y aprovechá un  30% de descuento al reservar 7 noches consecutivas.Más días, más relax... ¡al mejor precio!"</p>
+                </article>
+
+                <article>
+                    <img src="/imagenes/2x1.png" alt="Promoción 2x1">
+                    <h3>Promoción 2x1 - Una noche gratis!</h3>
+                    <p>"Reservá 2 noches y te regalamos 1 noche completamente gratis.Extendé tu descanso sin pagar de más y viví una experiencia única en nuestro hotel.Aprovecha esta oportunidad exclusiva!" </p>
+                </article>
+            </div>
             </section>
 
         </main>
 
-        <!--PIE DE PÁGINA-->
-        <footer>
-            <!--REDES SOCIALES-->
-            <section>
+       <!--PIE DE PAGINA-->
+    <footer>
+        <div class="footer">
+            <!-- REDES SOCIALES -->
+            <section class="redessociales">
                 <h3>Seguinos en nuestras redes sociales</h3>
-                <i class='bx bxl-instagram'></i>
-                <a href="https://www.instagram.com/hotelessanremo?igsh=MTFsMDdobXprNWV1dA==" target="_blank"
-                    title="Ir a Instagram">hotelessanremo </a>
-                <i class='bx bxl-facebook-circle'></i>
-                <a href="https://www.facebook.com/share/15zixzJRWT/" target="_blank" title="Ir a Facebook">San
-                    RemoHoteles</a>
+                <ul>
+                    <li>
+                        <i class='bx bxl-instagram'></i>
+                        <a href="https://www.instagram.com/hotelessanremo?igsh=MTFsMDdobXprNWV1dA==" target="_blank" title="Ir a Instagram">hotelessanremo</a>
+                    </li>
+                    <li>
+                        <i class='bx bxl-facebook-circle'></i>
+                        <a href="https://www.facebook.com/share/15zixzJRWT/" target="_blank" title="Ir a Facebook">San RemoHoteles</a>
+                    </li>
+                </ul>
             </section>
-
-            <!--CONTACTO-->
-            <section>
-                <h3>Contacto</h3>
-                <i class='bx bxs-phone'></i>
-                <a href="tel:+5492257585109" title="Llamar">2257585109</a>
-                <i class='bx bxl-whatsapp'></i>
-                <a href="https://wa.me/5492234425306" target="_blank" title="Ir a WhatsApp">2234425306</a>
-                <i class='bx bx-envelope'></i>
-                <a href="mailto:revervas@sanremohotel.com" target="_blank"
-                    title="Enviar correo">revervas@sanremohotel.com</a>
-                <i class='bx bx-location-plus'></i>
-                <a href="https://maps.app.goo.gl/YYvqaTjuzkm96Fs86" target="_blank" title="Ver Ubicación">C.16 San
-                    Clemente del Tuyú,BsAs,Argentina</a>
-
+    
+            <!-- CONTACTO -->
+            <section class="contacto">
+                <h3 id="contacto">Contacto</h3>
+                <ul>
+                    <li>
+                        <i class='bx bxs-phone'></i>
+                        <a href="tel:+5492257585109" title="Llamar">2257585109</a>
+                    </li>
+                    <li>
+                        <i class='bx bxl-whatsapp'></i>
+                        <a href="https://wa.me/5492234425306" target="_blank" title="Ir a WhatsApp">2234425306</a>
+                    </li>
+                    <li>
+                        <i class='bx bx-envelope'></i>
+                        <a href="mailto:revervas@sanremohotel.com" target="_blank" title="Enviar correo">revervas@sanremohotel.com</a>
+                    </li>
+                    <li>
+                        <i class='bx bx-location-plus'></i>
+                        <a href="https://maps.app.goo.gl/YYvqaTjuzkm96Fs86" target="_blank" title="Ver Ubicación">C.16 San Clemente del Tuyú, BsAs, Argentina</a>
+                    </li>
+                </ul>
             </section>
-            <p>© 2025 Hotel San Remo - Todos los derechos reservados</p>
-        </footer>
+        </div>
+        <p>© 2025 Hotel San Remo - Todos los derechos reservados</p>
+    </footer>
 
 </body>
 
