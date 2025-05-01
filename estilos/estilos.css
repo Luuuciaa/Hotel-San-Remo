@@ -18,7 +18,7 @@ body {
 
 
 main {
-    padding-top: 80px;
+    padding-top:0;
 }
 
 #logo {
@@ -42,6 +42,7 @@ nav {
     position: fixed;
     /*deja el menu fijo*/
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
     /* para que quede encima del contenido */
@@ -103,10 +104,11 @@ nav a:hover {
         width: 80px;
         height: 90px;
     }
+
     .nav_items {
         position: fixed;
         /*lo deja fijo aunque se haga scroll*/
-        top: 140px;
+        top: 130px;
         left: 0;
         background-color: #d8b25e;
         display: flex;
@@ -172,8 +174,9 @@ nav a:hover {
     width: 100%;
     filter: brightness(50%);
     /*Oscurece la imagen*/
-    height: 700px;
+    height: 800px;
    object-fit: cover; /* Asegura que la imagen ocupe todo el espacio sin deformarse */
+    margin-top: 60px;
 }
 
 .presentacion {
@@ -183,7 +186,7 @@ nav a:hover {
 
 .presentacion h1 {
     position: absolute;
-    top: 30%;
+    top: 40%;
     /* Centra el texto en vertical en la parte superior */
     left: 40%;
     /* Centra el texto en horizontal */
@@ -197,7 +200,7 @@ nav a:hover {
 
 .presentacion p {
     position: absolute;
-    top: 85%;
+    top: 90%;
     text-align: center;
     color: white;
     font-weight: 200;
@@ -212,6 +215,7 @@ nav a:hover {
 @media (max-width: 600px) {
     #elhotel {
         height: 400px;
+        object-position: center; /* Asegura que la imagen esté centrada */
     }
     .presentacion h1 {
         font-size: 40px;
@@ -221,7 +225,7 @@ nav a:hover {
     }
     .presentacion p{
         font-size: 16px;
-        top:  85%;
+        top:  90%;
         right: 20%;
         left: 20%;
         width: 70%;
@@ -468,7 +472,7 @@ nav a:hover {
 #titulohabitaciones {
     font-family: "Glory", sans-serif;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 150px;
     font-size: 40px;
     margin-bottom: 50px;
 }
@@ -643,7 +647,7 @@ nav a:hover {
 
 .ubicacion h1 {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 150px;
     margin-bottom: 30px;
     font-size: 40px;
 
@@ -674,9 +678,11 @@ nav a:hover {
 @media (max-width: 600px) {
     .ubicacion h1 {
         font-size: 30px;
+        margin-top: 90px;
+       
     }
     .ubicacion h3 {
-        font-size: 18px;
+        font-size: 16px;
     }
     .ubicacion p{
         font-size: 16px;
@@ -686,7 +692,7 @@ nav a:hover {
 /*FORMULARIO DE CONTACTO*/
 #titulocontacto {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 150px;
     margin-bottom: 30px;
     font-size: 40px;
     font-family: "Glory", sans-serif;
@@ -810,6 +816,7 @@ select {
 @media (max-width: 600px) {
     #titulocontacto {
         font-size: 30px;
+        margin-top: 90px;
     }
 
     #duda {
@@ -843,7 +850,7 @@ select {
 /*FORMULARIO DE RESERVA*/
 #tituloreserva {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 150px;
     margin-bottom: 30px;
     font-size: 40px;
     font-family: "Glory", sans-serif;
@@ -914,6 +921,7 @@ select {
 @media (max-width: 600px) {
     #tituloreserva {
         font-size: 30px;
+        margin-top: 90px;
     }
 
     .formulario-reservar {
@@ -954,7 +962,7 @@ select {
 
 .promociones h1 {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 150px;
     margin-bottom: 30px;
     font-size: 40px;
     font-family: "Glory", sans-serif;
@@ -1016,6 +1024,7 @@ select {
 @media (max-width: 600px) {
     .promociones h1 {
         font-size: 30px;
+        margin-top: 90px;
     }
 
     .promociones p {
