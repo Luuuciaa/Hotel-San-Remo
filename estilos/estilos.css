@@ -433,22 +433,26 @@ nav a:hover {
     }
 
     .servicios h3 {
-        font-size: 19px;
+        font-size: 18px;
         margin-bottom: 20px;
     }
 
     .servicios h4 {
-        font-size: 16px;
+        font-size: 13px;
         margin-top: 10px;
         margin-bottom: 15px;
+    }
+    .servicios article {
+       
     }
 
     .servicios article i {
         font-size: 25px;
+       
     }
 
     .servicios p {
-        font-size: 14px;
+        font-size: 13px;
         margin: 10px auto;
     }
 
