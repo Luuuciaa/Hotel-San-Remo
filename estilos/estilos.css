@@ -32,20 +32,26 @@ main {
 nav {
     display: flex;
     background-color: #fcf8ef;
-    align-items: center;/* Centra verticalmente los enlaces */
-    box-sizing: border-box;/* Asegura que el padding no afecte el tamaño total */
+    align-items: center;
+    /* Centra verticalmente los enlaces */
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el tamaño total */
     justify-content: space-between;
-    padding: 20px; /*Agrega un poco de espacio alrededor del contenido*/
-    position: fixed;/*deja el menu fijo*/
+    padding: 20px;
+    /*Agrega un poco de espacio alrededor del contenido*/
+    position: fixed;
+    /*deja el menu fijo*/
     top: 0;
     width: 100%;
-    z-index: 1000;/* para que quede encima del contenido */
+    z-index: 1000;
+    /* para que quede encima del contenido */
 
 }
 
 /* Estilo de los elementos de la lista de navegación */
 nav li {
-    margin: 10px; /*Espacio entre los elementos*/
+    margin: 10px;
+    /*Espacio entre los elementos*/
 
 }
 
@@ -55,27 +61,106 @@ nav a {
     color: #3f2c0e;
     font-weight: 700;
     font-family: "Montserrat", sans-serif;
-    padding: 6px 16px;/* Reduce el tamaño del fondo */
-    border-radius: 20px;/* Hace que el fondo sea redondo */
+    padding: 6px 16px;
+    /* Reduce el tamaño del fondo */
+    border-radius: 20px;
+    /* Hace que el fondo sea redondo */
     background-color: #d8b25e;
-    transition: background-color 0.3s ease; /* Transición suave para el hover */
-    cursor: pointer;/*mouse*/
+    transition: background-color 0.3s ease;
+    /* Transición suave para el hover */
+    cursor: pointer;
+    /*mouse*/
 
 }
 
 
 /* Estilo de la lista de navegación */
 nav ul {
-    display: flex;/*Hace que los elementos estén en línea*/
+    display: flex;
+    /*Hace que los elementos estén en línea*/
     list-style: none;
-    text-align: left;/* Asegura que los enlaces se alineen a la izquierda */
+    text-align: left;
+    /* Asegura que los enlaces se alineen a la izquierda */
 
 }
 
 nav a:hover {
     background-color: #3f2c0e;
-    color: #fcf8ef; /* Cambia el color del texto en el hover */
+    color: #fcf8ef;
+    /* Cambia el color del texto en el hover */
 
+}
+
+/*MENÚ HAMBURGUESA*/
+.nav_toggle {
+    display: none;
+    /*Oculta el botón hamburguesa en pantallas grandes*/
+}
+
+/*DISPOSITIVOS PEQUEÑOS*/
+@media (max-width: 600px) {
+    .nav_items {
+        position: fixed;
+        /*lo deja fijo aunque se haga scroll*/
+        top: 140px;
+        left: 0;
+        background-color: #d8b25e;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        /* 100% del ancho de la pantalla */
+        height: 100%;
+        /* 100% del alto de la pantalla */
+        transform: translateX(-100%);
+        /*entra el menu desde la izquierda y aparece en pantalla*/
+        transition: transform 0.3s ease;
+        /*aparezca/desaparezca con una animación suave.*/
+
+    }
+    .nav_items.open {
+        transform: translateX(0);
+        /*Cuando se le agrega la clase .open desde JavaScript, se muestra el menú se desliza y aparece.*/
+    }
+
+    .nav_toggle {
+        display: flex !important;
+        /*muestra las líneas*/
+        flex-direction: column;
+        margin: 15px;
+        z-index: 11;
+        /*lo pone por encima del menú*/
+        cursor: pointer;
+    }
+
+    /*Cada línea del botón hamburguesa*/
+    .nav_toggle span {
+        width: 30px;
+        height: 4px;
+        /* Altura (grosor) de cada línea */
+        background-color: #3f2c0e;
+        margin-bottom: 5px;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        /* Suaviza la animación cuando cambia */
+    }
+
+    /*TRANSFORMA EL ÍCONO DE HAMBURGUESA EN UNA CRUZ Y SE ACTIVA CON LA CLASE .ACTIVE*/
+
+    /* Rota la primera línea 45 grados y la mueve un poco, formando la primera parte de la cruz*/
+    .nav_toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    /*Oculta la línea del medio. Así solo quedan las líneas de arriba y abajo, que cruzadas forman la X*/
+    .nav_toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    /*Rota la tercera línea en dirección opuesta, formando la otra parte de la X*/
+    .nav_toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
 }
 
 /*SECCIÓN DE PRESENTACIÓN*/
@@ -84,7 +169,7 @@ nav a:hover {
     filter: brightness(50%);
     /*Oscurece la imagen*/
     height: 700px;
-
+   object-fit: cover; /* Asegura que la imagen ocupe todo el espacio sin deformarse */
 }
 
 .presentacion {
@@ -94,8 +179,10 @@ nav a:hover {
 
 .presentacion h1 {
     position: absolute;
-    top: 30%;/* Centra el texto en vertical en la parte superior */
-    left: 40%; /* Centra el texto en horizontal */
+    top: 30%;
+    /* Centra el texto en vertical en la parte superior */
+    left: 40%;
+    /* Centra el texto en horizontal */
     text-align: center;
     font-size: 70px;
     color: white;
@@ -112,11 +199,30 @@ nav a:hover {
     font-weight: 200;
     font-size: 25px;
     right: 30%;
-    left: 30%; /* Centra el párrafo horizontalmente */
-   
+    left: 30%;
+    /* Centra el párrafo horizontalmente */
+
 
 }
-
+/*DISPOSITIVOS PEQUEÑOS*/
+@media (max-width: 600px) {
+    #elhotel {
+        height: 400px;
+    }
+    .presentacion h1 {
+        font-size: 40px;
+        top: 35%;
+        transform: translateX(-50%); 
+         left: 50%;
+    }
+    .presentacion p{
+        font-size: 16px;
+        top:  85%;
+        right: 20%;
+        left: 20%;
+        width: 70%;
+    }
+}
 /*SECCIÓN INFORMACIÓN DEL HOTEL*/
 .elhotel {
     display: flex;
@@ -125,7 +231,8 @@ nav a:hover {
     padding: 60px 30px;
     flex-wrap: wrap;
     font-family: "Glory", sans-serif;
-    gap: 80px;/* Espacio entre el texto y la imagen */
+    gap: 80px;
+    /* Espacio entre el texto y la imagen */
 }
 
 .contenido-texto {
@@ -153,6 +260,7 @@ nav a:hover {
     font-family: "League Spartan", sans-serif;
     font-size: 20px;
     margin-bottom: 30px;
+    text-align: center;
 
 }
 
@@ -191,15 +299,51 @@ nav a:hover {
 }
 
 
+/*DISPOSITIVOS PEQUEÑOS*/
+@media (max-width: 600px){
+    .elhotel {
+        gap: 30px; /* Reduce el espacio entre elementos del contenedor .elhotel */
+    }
+    .elhotel h2 {
+        font-size: 25px;
+        margin-bottom: 2px;
+        margin-top: 2px; 
+    }
+    .elhotel h3 {
+        font-size: 20px;
+    }
+    .elhotel p{
+        font-size: 14px;
+        line-height: 20px;
+      
+    }
+    .elhotel a {
+        font-size: 12px;
+        padding: 10px 10px;
+        margin-bottom: 8px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .contenido-imagen img {
+        width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto;/* Centrado horizontal y sin margen vertical */
+    }
+    
+}
 /*SERVICIOS*/
 .servicios {
-    background-color: #fcf8ef; /* Fondo suave para la sección */
+    background-color: #fcf8ef;
+    /* Fondo suave para la sección */
     font-family: "Montserrat", sans-serif;
     padding: 40px;
     margin-bottom: 800px;
     margin-top: 70px;
-    max-width: 1200px;/* Limitar el ancho máximo */
-    margin: 0 auto;/* Centrar la sección */
+    max-width: 1200px;
+    /* Limitar el ancho máximo */
+    margin: 0 auto;
+    /* Centrar la sección */
 
 
 }
@@ -245,7 +389,8 @@ nav a:hover {
 }
 
 .servicios article i:hover {
-    transform: scale(1.2) rotate(5deg); /*movimiento en los íconos*/
+    transform: scale(1.2) rotate(5deg);
+    /*movimiento en los íconos*/
 }
 
 .servicios p {
@@ -256,7 +401,7 @@ nav a:hover {
 
 }
 
-#texto-coche {
+#texto-coche  {
     max-width: 250px;
 }
 
@@ -272,29 +417,77 @@ nav a:hover {
 #texto-comida {
     max-width: 250px;
 }
+@media (max-width: 600px) {
+    .servicios {
+        padding: 30px 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
 
+    .servicios h3 {
+        font-size: 19px;
+        margin-bottom: 20px;
+    }
+
+    .servicios h4 {
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .servicios article i {
+        font-size: 25px;
+    }
+
+    .servicios p {
+        font-size: 14px;
+        margin: 10px auto;
+    }
+
+    #texto-coche,
+    #texto-desayuno,
+    #texto-wifi,
+    #texto-comida {
+        max-width: 80%;
+    }
+
+    .columna1,
+    .columna2,
+    .columna3 {
+        margin-right: 0px;
+    }
+    
+}
+ 
+    
 /*HABITACIONES*/
 #titulohabitaciones {
     font-family: "Glory", sans-serif;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 100px;
     font-size: 40px;
     margin-bottom: 50px;
 }
 
 .habitaciones-container {
     display: flex;
-    flex-wrap: wrap;/*Permite que los elementos (las imágenes) bajen a la siguiente fila si no entran en una sola*/
-    justify-content: center;/*Centra horizontalmente las cards dentro del contenedor.*/
+    flex-wrap: wrap;
+    /*Permite que los elementos (las imágenes) bajen a la siguiente fila si no entran en una sola*/
+    justify-content: center;
+    /*Centra horizontalmente las cards dentro del contenedor.*/
     margin-top: 10px;
     margin-bottom: 30px;
 }
 
 .habitaciones {
-    border: 2px solid #3f2c0e; /* Borde de 2px de grosor y color negro */
-    padding: 30px; /* Espacio interno dentro del recuadro */
-    margin: 30px;/* Espacio externo alrededor del recuadro */
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);/* Sombra */
+    border: 2px solid #3f2c0e;
+    /* Borde de 2px de grosor y color negro */
+    padding: 30px;
+    /* Espacio interno dentro del recuadro */
+    margin: 30px;
+    /* Espacio externo alrededor del recuadro */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    /* Sombra */
     width: 500px;
     border-radius: 10px;
     text-align: center;
@@ -368,24 +561,30 @@ nav a:hover {
     text-decoration: none;
     color: #3f2c0e;
     font-family: "Montserrat", sans-serif;
-    padding: 10px 10px;/* Reduce el tamaño del fondo */
-    border-radius: 25px;/* Hace que el fondo sea redondo */
+    padding: 10px 10px;
+    /* Reduce el tamaño del fondo */
+    border-radius: 25px;
+    /* Hace que el fondo sea redondo */
     background-color: #d8b25e;
-    transition: background-color 0.3s ease;/* Transición suave para el hover */
+    transition: background-color 0.3s ease;
+    /* Transición suave para el hover */
     font-weight: 700;
     width: 70px;
     display: flex;
-    justify-content: flex-end;/*lo alinea a la izquierda*/
+    justify-content: flex-end;
+    /*lo alinea a la izquierda*/
     text-align: center;
     justify-content: center;
     font-size: 15px;
-    cursor: pointer;/*mouse*/
+    cursor: pointer;
+    /*mouse*/
 
 }
 
 .reservar:hover {
     background-color: #3f2c0e;
-    color: #fcf8ef;/* Cambia el color del texto en el hover */
+    color: #fcf8ef;
+    /* Cambia el color del texto en el hover */
 }
 
 /*iconos*/
@@ -397,6 +596,40 @@ nav a:hover {
 .bx-user {
     margin-right: 10px;
     font-size: 24px;
+}
+
+/*DISPOSITIVOS PEQUEÑOS*/
+@media (max-width: 600px) {
+    #titulohabitaciones {
+        margin-top: 100px;
+        font-size: 30px;
+    }
+
+    .habitaciones {
+        width: 90%;
+        /* Ocupará casi toda la pantalla */
+        margin: 15px;
+        /* Margen más chico para que no quede muy apretado */
+        padding: 20px;
+    }
+
+    .habitaciones h3 {
+        font-size: 25px;
+    }
+
+    .habitaciones h4 {
+        font-size: 20px;
+    }
+
+    .habitaciones p,
+    .habitaciones ul li {
+        font-size: 17px;
+    }
+
+    .reservar {
+        font-size: 14px;
+        padding: 8px 8px;
+    }
 }
 
 /*SECCION UBICACIÓN*/
@@ -430,7 +663,20 @@ nav a:hover {
 .ubicacion iframe {
     width: 90%;
     display: block;
-    margin: 0 auto 80px;/*margen superior , izquierdo y derecho y inferior*/
+    margin: 0 auto 80px;
+    /*margen superior , izquierdo y derecho y inferior*/
+}
+/*DISPOSITIVOS PEQUEÑOS*/
+@media (max-width: 600px) {
+    .ubicacion h1 {
+        font-size: 30px;
+    }
+    .ubicacion h3 {
+        font-size: 18px;
+    }
+    .ubicacion p{
+        font-size: 16px;
+    }
 }
 
 /*FORMULARIO DE CONTACTO*/
@@ -438,7 +684,7 @@ nav a:hover {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 30px;
-    font-size: 35px;
+    font-size: 40px;
     font-family: "Glory", sans-serif;
 }
 
@@ -461,7 +707,8 @@ nav a:hover {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    margin: 50px auto;/* centrado horizontal y espacio arriba/abajo */
+    margin: 50px auto;
+    /* centrado horizontal y espacio arriba/abajo */
     font-family: "Montserrat", sans-serif;
 }
 
@@ -480,8 +727,10 @@ nav a:hover {
     max-height: 200px;
     margin-bottom: 15px;
     font-family: "Montserrat", sans-serif;
-    padding: 12px;  /* Agrega espacio interno general */
-    padding-top: 20px; /* Más espacio arriba específicamente */
+    padding: 12px;
+    /* Agrega espacio interno general */
+    padding-top: 20px;
+    /* Más espacio arriba específicamente */
 }
 
 textarea::placeholder {
@@ -493,11 +742,14 @@ textarea::placeholder {
 select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc; /* Borde gris claro */
-    border-radius: 5px;/* Bordes redondeados */
+    border: 1px solid #ccc;
+    /* Borde gris claro */
+    border-radius: 5px;
+    /* Bordes redondeados */
     font-family: inherit;
     font-size: 17px;
-    box-sizing: border-box;/* Incluye padding y borde en el ancho total */
+    box-sizing: border-box;
+    /* Incluye padding y borde en el ancho total */
     margin-bottom: 15px;
 
 }
@@ -507,26 +759,32 @@ select {
 }
 
 .formulario-contacto button {
-    margin: 30px auto; /* Centrado y con más espacio arriba */
+    margin: 30px auto;
+    /* Centrado y con más espacio arriba */
     text-decoration: none;
     color: #3f2c0e;
     font-family: "Montserrat", sans-serif;
-    padding: 10px 20px;/* alto y ancho */
+    padding: 10px 20px;
+    /* alto y ancho */
     border-radius: 25px;
     background-color: #d8b25e;
     transition: background-color 0.3s ease;
     font-weight: 700;
-    font-size: 17px; /* Tamaño de letra más grande */
-    width: auto;/* Se adapta al contenido */
+    font-size: 17px;
+    /* Tamaño de letra más grande */
+    width: auto;
+    /* Se adapta al contenido */
     text-align: center;
     border: none;
-    cursor: pointer;/*mouse*/
+    cursor: pointer;
+    /*mouse*/
 
 }
 
 .formulario-contacto button:hover {
     background-color: #3f2c0e;
-    color: #fcf8ef; /* Cambia el color del texto en el hover */
+    color: #fcf8ef;
+    /* Cambia el color del texto en el hover */
 }
 
 .checkbok {
@@ -536,11 +794,46 @@ select {
 }
 
 .checkbok input[type="checkbox"] {
-    margin-right: 10px; /* Agrega espacio entre el checkbox y el texto */
+    margin-right: 10px;
+    /* Agrega espacio entre el checkbox y el texto */
     width: 15px;
     height: 20px;
     accent-color: #d8b25e;
 
+}
+
+/*DISPOSITIVOS PEQUEÑOS*/
+@media (max-width: 600px) {
+    #titulocontacto {
+        font-size: 30px;
+    }
+
+    #duda {
+        font-size: 18px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .formulario-contacto {
+        max-width: 400px;
+        margin: 0 auto;
+        
+    }
+
+    .formulario-contacto label {
+        font-size: 15px;
+    }
+    .formulario-contacto input,
+    select{
+        font-size: 15px;
+    }
+    .formulario-contacto button {
+        font-size: 14px;
+        padding: 8px 8px;
+    }
+    .formulario-contacto select  option {
+        font-size: 14px;
+    }
 }
 
 /*FORMULARIO DE RESERVA*/
@@ -548,7 +841,7 @@ select {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 30px;
-    font-size: 35px;
+    font-size: 40px;
     font-family: "Glory", sans-serif;
 }
 
@@ -565,33 +858,40 @@ select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-family: inherit;/*hereda la fuente del padre*/
+    font-family: inherit;
+    /*hereda la fuente del padre*/
     font-size: 17px;
     box-sizing: border-box;
     margin-bottom: 15px;
 }
 
 .formulario-reservar button {
-    margin: 30px auto; /* Centrado y con más espacio arriba */
+    margin: 30px auto;
+    /* Centrado y con más espacio arriba */
     text-decoration: none;
     color: #3f2c0e;
     font-family: "Montserrat", sans-serif;
-    padding: 10px 20px;/* alto y ancho */
+    padding: 10px 20px;
+    /* alto y ancho */
     border-radius: 25px;
     background-color: #d8b25e;
     transition: background-color 0.3s ease;
     font-weight: 700;
-    font-size: 17px; /* Tamaño de letra más grande */
-    width: auto; /* Se adapta al contenido */
+    font-size: 17px;
+    /* Tamaño de letra más grande */
+    width: auto;
+    /* Se adapta al contenido */
     text-align: center;
     border: none;
-    cursor: pointer;/*mouse*/
+    cursor: pointer;
+    /*mouse*/
 
 }
 
 .formulario-reservar button:hover {
     background-color: #3f2c0e;
-    color: #fcf8ef;/* Cambia el color del texto en el hover */
+    color: #fcf8ef;
+    /* Cambia el color del texto en el hover */
 }
 
 .formulario-reservar textarea {
@@ -599,17 +899,50 @@ select {
     max-height: 200px;
     margin-bottom: 15px;
     font-family: "Montserrat", sans-serif;
-    padding: 12px; /* Agrega espacio interno general */
-    padding-top: 20px; /* Más espacio arriba específicamente */
+    padding: 12px;
+    /* Agrega espacio interno general */
+    padding-top: 20px;
+    /* Más espacio arriba específicamente */
 
 }
 
+/*DISPOSITIVOS PEQUEÑOS*/
+@media (max-width: 600px) {
+    #tituloreserva {
+        font-size: 30px;
+    }
+
+    .formulario-reservar {
+        max-width: 400px;
+        margin: 0 auto;
+
+    }
+
+    .formulario-reservar label {
+        font-size: 15px;
+    }
+
+    .formulario-reservar input,
+    select {
+        font-size: 15px;
+    }
+
+    textarea::placeholder {
+        font-size: 15px;
+    }
+
+    .formulario-reservar button {
+        font-size: 14px;
+        padding: 8px 8px;
+    }
+}
 
 /*PROMOCIONES DEL HOTEL*/
 .promos-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /*Centra horizontalmente las cards dentro del contenedor.*/
+    justify-content: center;
+    /*Centra horizontalmente las cards dentro del contenedor.*/
     margin-top: 10px;
     margin-bottom: 30px;
 
@@ -633,20 +966,33 @@ select {
 .promociones img {
     width: 400px;
     border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 90px;
 
 }
 
 .promociones article {
-    border: 2px solid #3f2c0e;/* Borde de 2px de grosor y color negro */
-    padding: 30px;/* Espacio interno dentro del recuadro */
-    margin: 30px; /* Espacio externo alrededor del recuadro */
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2); /* Sombra */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todo horizontalmente */
+    justify-content: center;
+    border: 2px solid #3f2c0e;
+    /* Borde de 2px de grosor y color negro */
+    padding: 30px;
+    /* Espacio interno dentro del recuadro */
+    margin: 30px;
+    /* Espacio externo alrededor del recuadro */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    /* Sombra */
     width: 500px;
     border-radius: 10px;
     text-align: center;
-    margin: 15px; /* Espacio entre las cards */
-    max-height: 500px;/* Limita la altura */
-    overflow: hidden;/* Oculta lo que se pasa del tamaño */
+    margin: 15px;
+    /* Espacio entre las cards */
+    max-height: 500px;
+    /* Limita la altura */
+    overflow: hidden;
+    /* Oculta lo que se pasa del tamaño */
 
 }
 
@@ -662,15 +1008,50 @@ select {
     font-size: 25px;
 }
 
+/*DISPOSITIVOS PEQUEÑOS*/
+@media (max-width: 600px) {
+    .promociones h1 {
+        font-size: 30px;
+    }
+
+    .promociones p {
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+
+    .promociones img {
+        width: 100%; 
+        
+        max-height: none;
+        padding: 10px;
+        margin: 10px  /* Centrado y con poco margen */
+        
+      
+    }
+
+    .promociones article {
+        width: 350px;
+        padding: 25px;
+        
+    }
+
+    .promociones h3 {
+        font-size: 19px;
+    }
+}
 
 /*GALERIA DE FOTOS*/
 .imagenes-container {
     display: grid;
-    grid-template-columns: repeat(2 1fr); /*2 columnas*/
-    grid-template-rows: repeat(3, auto);/*3 filas*/
+    grid-template-columns: repeat(2 1fr);
+    /*2 columnas*/
+    grid-template-rows: repeat(3, auto);
+    /*3 filas*/
     justify-content: center;
-    max-width: 80%;/*Ajusta el ancho del contenedor*/
-    margin: auto;/*Centra las imagenes horizontalmente dentro del contenedor*/
+    max-width: 80%;
+    /*Ajusta el ancho del contenedor*/
+    margin: auto;
+    /*Centra las imagenes horizontalmente dentro del contenedor*/
 
 
 }
@@ -688,18 +1069,35 @@ select {
     margin-bottom: 60px;
     width: 700px;
     object-fit: cover;
-    transition: transform 0.3s;/*animacion al pasar el mouse que durara 3s*/
+    transition: transform 0.3s;
+    /*animacion al pasar el mouse que durara 3s*/
 
 }
 
 .galeria img:hover {
-    transform: scale(1.03);/* agranda un poquito la imagen al pasar el mouse */
+    transform: scale(1.03);
+    /* agranda un poquito la imagen al pasar el mouse */
 }
 
 .imagenes {
     margin-bottom: 100px;
 }
 
+/*DISPOSITIVOS PEQUEÑOS*/
+@media (max-width: 600px){
+    
+     .galeria h1 {
+        font-size: 30px;
+        margin-bottom: 50px;
+     }
+     .galeria img{
+        width: 100%; 
+        margin: 0 auto; /* Centra la imagen horizontalmente */
+        display: block; /* Asegura que la imagen se muestre como bloque */
+        margin-bottom: 40px;
+     }
+      
+}
 
 /*PIE DE PÁGINA*/
 .footer {
@@ -744,7 +1142,8 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
-    color: #f8d479;/* un dorado suave que resalta */
+    color: #f8d479;
+    /* un dorado suave que resalta */
 }
 
 footer ul {
@@ -772,4 +1171,33 @@ footer .bx {
     font-size: 25px;
     margin-top: 10px;
     color: #f8d479;
+}
+
+
+/*DISPOSITIVOS PEQUEÑOS*/
+@media (max-width: 600px){
+    .footer{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+ footer{
+    font-size: 13px;
+    
+    padding: 20px; 
+ }
+ .redessociales h3 ,.contacto h3 {
+    font-size: 14px;
+ }
+ .contacto h3 {
+    margin-top: 30px;
+ }
+ footer p {
+    font-size: 13px;
+ }
+ footer .bx {
+    font-size: 20px;
+    margin-right: 5px;
+ }
 }

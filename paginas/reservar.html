@@ -26,13 +26,14 @@
 </head>
 
 <body>
+   
     <header>
 
         <!--MENÚ DE NAVEGACIÓN-->
         <nav>
             <!--LOGO-->
             <img src="/imagenes/logo.png" alt="San Remo World Hotel Logo" id="logo">
-            <ul>
+            <ul class="nav_items" id="_items">
                 <li><a href="/index.html">El Hotel</a></li>
                 <li><a href="/paginas/habitaciones.html">Habitaciones</a></li>
                 <li><a href="/paginas/promociones.html"> Promociones</a></li>
@@ -40,39 +41,46 @@
                 <li><a href="/paginas/ubicacion.html">Ubicación</a></li>
                 <li><a href="/paginas/contacto.html">Contacto</a></li>
             </ul>
+
+          <!--MENÚ HAMBURGUESA-->
+            <div class="nav_toggle" id="_toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
         </nav>
 
-</header>
+    </header>
 
         <main>
 
             <!--FORMULARIO DE RESERVA-->
 
             <h1 id="tituloreserva">Reserva de Habitación</h1>
-            <form action="" method="get" class="formulario-reservar">
+            <form action="" method="get" class="formulario-reservar" id="FormReservar">
 
                 <label for="nombre">Nombre completo </label>
                 <input id="nombre" name="nombre " type="text" placeholder="Ingrese su nombre completo"
-                    title="Nombre Completo" required>
+                    title="Nombre Completo" >
 
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="Ingrese su email" title="Correo electronico"
-                    required>
+                <input id="email" name="email" type="email" placeholder="Ingrese su email" title="Correo electronico">
 
                 <label for="telefono">Teléfono</label>
                 <input id="telefono" name="telefono" type="tel" placeholder="Ingrese su telefono"
-                    title="Telefono de contacto" required>
+                    title="Telefono de contacto" >
 
                 <label for="fechaEntrada">Fecha de Entrada</label>
                 <input id="fechaEntrada" name="fechaEntrada" type="date" placeholder="Ingrese la fecha de entrada"
-                    title="Fecha de entrada" required>
+                    title="Fecha de entrada" >
 
                 <label for="fechaSalida">Fecha de salida</label>
                 <input id="fechaSalida" name="fechaSalida" type="date" placeholder="Ingresa la fecha de salida"
-                    title="Fecha de salida" required>
+                    title="Fecha de salida">
                  
                     <label for="cantidadePersonas">Cantidad de personas</label>
-                    <input id="cantidadPersonas" name="cantidadPersonas" type="number" placeholder="Ingresa la cantidad de personas" title="Cantidad de personas" required>
+                    <input id="cantidadPersonas" name="cantidadPersonas" type="number" placeholder="Ingresa la cantidad de personas" title="Cantidad de personas" >
 
                 <label for="comentarios">Comentarios adicionales</label>
                 <textarea id="comentarios" placeholder="Ingresa el comentario" title="Escribe tu comentario aquí"
@@ -127,6 +135,10 @@
         </div>
         <p>© 2025 Hotel San Remo - Todos los derechos reservados</p>
     </footer>
+    <script src="/js/menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/validacionReservar.js" defer></script>
+
 </body>
 
 </html>
